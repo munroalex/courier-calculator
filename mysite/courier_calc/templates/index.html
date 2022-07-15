@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h1>Courier Calculator</h1>
+  <form method="post">
+    <div class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="p-3">
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</div>
+<div class="p-3"></div>
+    {% if contract_price %}
+    <p>Please make your contract out for the following price to .................</p>
+    ${{ contract_price }}
+    {% endif %}
+</div>
+    </div>
+  </form>  
+{% endblock %}
