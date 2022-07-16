@@ -8,7 +8,7 @@ class Locations(models.Model):
 
     def __str__(self):
          return self.location
-
+# For future use when different routes require different rate calculations
 class Routes(models.Model):
     origin = models.CharField(max_length=300)
     destination = models.CharField(max_length=300)
